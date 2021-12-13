@@ -1,4 +1,4 @@
-file=open("input1.txt","r")
+file=open("2021_input1.txt","r")
 input1=file.readlines()
 file.close()
 for i in range(len(input1)):
