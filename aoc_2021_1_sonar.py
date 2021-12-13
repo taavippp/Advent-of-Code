@@ -7,10 +7,21 @@ for i in range(len(input1)):
 prev=int(-1)
 curr=int(-1)
 greater=int()
-for x in input1:
+prev_w=int(-1)
+curr_w=int(-1)
+greater_w=int()
+
+for x in range(len(input1)):
     prev=curr
-    curr=x
+    curr=input1[x]
     if curr>prev and prev!=-1:
         greater+=1
+    if x>=2:
+        prev_w=curr_w
+        curr_w=input1[x-2]+input1[x-1]+input1[x]
+        if prev_w!=-1 and curr_w>prev_w:
+            greater_w+=1
+
 print("{} depth values were larger than the one before it.".format(greater))
+print("{} three-value windows were greater than the previous one.".format(greater_w))
 print("Got {} total values from file.".format(len(input1)))
